@@ -3022,7 +3022,7 @@ public class Session implements Closeable {
     
     public int getScheduledWriteMessages(){
     	synchronized (responderLock) {
-			return ((IoSessionResponder) this.responder).getScheduledWriteMessages();
+    		return (responder != null) ? ((IoSessionResponder) this.responder).getScheduledWriteMessages() : 0;
 		}
     }
 
