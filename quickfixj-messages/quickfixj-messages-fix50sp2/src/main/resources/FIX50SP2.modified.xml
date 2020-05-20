@@ -8776,6 +8776,7 @@
       <value enum="118" description="MINIMUM_STOP_DISTANCE"/>
       <value enum="119" description="PRICE_SCALING_FACTOR"/>
       <value enum="120" description="MARKET_DATA_SUPPORTED"/>
+      <value enum="121" description="PREMIUM"/>
     </field>
     <field number="872" name="InstrAttribValue" type="STRING"/>
     <field number="873" name="DatedDate" type="LOCALMKTDATE"/>
