@@ -4443,6 +4443,7 @@
         <field name="ComplexEventPriceTimeType" required="N"/>
         <field name="ComplexEventCondition" required="N"/>
         <component name="ComplexEventDates" required="N"/>
+        <field name="ComplexEventStrikePrice" required="N"/>
       </group>
     </component>
     <component name="UnderlyingStipulations">
@@ -10115,6 +10116,8 @@
       <value enum="2" description="REJECTED"/>
       <value enum="3" description="TERMINATE_UNASSIGN"/>
     </field>
+    <!-- New field https://fiximate.fixtrading.org/en/FIX.5.0SP2_EP257/tag2130.html -->
+    <field number="2130" name="ComplexEventStrikePrice" type="PRICE"/>
 
     <!-- New Field for Position ID : See http://www.fixprotocol.org/specifications/fields -->
     <field number="7324" name="PositionId" type="STRING"/>
