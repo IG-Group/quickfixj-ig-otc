@@ -7759,6 +7759,7 @@
       <value enum="3" description="NOT_AUTHORIZED_TO_RETRIEVE_INSTRUMENT_DATA"/>
       <value enum="4" description="INSTRUMENT_DATA_TEMPORARILY_UNAVAILABLE"/>
       <value enum="5" description="REQUEST_FOR_INSTRUMENT_DATA_NOT_SUPPORTED"/>
+      <value enum="100" description="REQUEST_QUOTA_EXCEEDED"/>
     </field>
     <field number="561" name="RoundLot" type="QTY"/>
     <field number="562" name="MinTradeVol" type="QTY"/>
