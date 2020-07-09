@@ -2691,6 +2691,7 @@
       <field name="SecurityReqID" required="N"/>
       <field name="SecurityResponseID" required="N"/>
       <field name="SecurityResponseType" required="N"/>
+      <field name="SecurityRequestResult" required="N"/>
       <field name="CorporateAction" required="N"/>
       <component name="Instrument" required="N"/>
       <component name="InstrumentExtension" required="N"/>
@@ -7760,6 +7761,7 @@
       <value enum="4" description="INSTRUMENT_DATA_TEMPORARILY_UNAVAILABLE"/>
       <value enum="5" description="REQUEST_FOR_INSTRUMENT_DATA_NOT_SUPPORTED"/>
       <value enum="100" description="REQUEST_QUOTA_EXCEEDED"/>
+      <value enum="101" description="NOT_AUTHORIZED_FOR_ACCOUNT"/>
     </field>
     <field number="561" name="RoundLot" type="QTY"/>
     <field number="562" name="MinTradeVol" type="QTY"/>
