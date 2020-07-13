@@ -1,9 +1,9 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>org.quickfixj</groupId>
+        <groupId>com.ig.otc</groupId>
         <artifactId>quickfixj-parent</artifactId>
-        <version>2.2.1-SNAPSHOT</version>
+        <version>1.0.0-SNAPSHOT</version>
     </parent>
 
     <artifactId>quickfixj-core</artifactId>
@@ -188,7 +188,7 @@
 
         <plugins>
             <plugin>
-                <groupId>org.quickfixj</groupId>
+                <groupId>com.ig.otc</groupId>
                 <artifactId>quickfixj-codegenerator</artifactId>
                 <version>${project.version}</version>
                 <executions>
@@ -198,7 +198,7 @@
                             <goal>generate</goal>
                         </goals>
                         <configuration>
-                            <dictFile>../quickfixj-messages/quickfixj-messages-fixt11/src/main/resources/FIXT11.xml</dictFile>
+                            <dictFile>../quickfixj-messages/quickfixj-messages-fixt11/src/main/resources/FIXT11.modified.xml</dictFile>
                             <packaging>quickfix.fixt11</packaging>
                             <fieldPackage>quickfix.field</fieldPackage>
                             <decimal>${generator.decimal}</decimal>
