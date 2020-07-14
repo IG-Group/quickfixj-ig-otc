@@ -862,6 +862,8 @@
     <message name="PositionMaintenanceRequest" msgtype="AL" msgcat="app">
       <!-- Required by IG -->
       <field name="PosReqID" required="Y"/>
+      <!-- PositionID in PositionMaintenanceRequest is an IG Customisation -->
+      <field name="PositionID" required="Y"/>
       <field name="PosTransType" required="Y"/>
       <field name="PosMaintAction" required="Y"/>
       <field name="OrigPosReqRefID" required="N"/>
@@ -896,6 +898,8 @@
     <message name="PositionMaintenanceReport" msgtype="AM" msgcat="app">
       <field name="PosMaintRptID" required="Y"/>
       <field name="PosTransType" required="Y"/>
+      <!--  PositionID is FIX Standard EP199 - added to dictionary by IG  -->
+      <field name="PositionID" required="N"/>
       <field name="PosReqID" required="N"/>
       <field name="PosMaintAction" required="Y"/>
       <field name="OrigPosReqRefID" required="N"/>
@@ -987,6 +991,8 @@
     <message name="PositionReport" msgtype="AP" msgcat="app">
       <component name="ApplicationSequenceControl" required="N"/>
       <field name="PosMaintRptID" required="Y"/>
+      <!--  PositionID is FIX Standard EP199 - added to dictionary by IG  -->
+      <field name="PositionID" required="N"/>      
       <field name="PosReqID" required="N"/>
       <field name="PosReqType" required="N"/>
       <field name="SubscriptionRequestType" required="N"/>
@@ -3623,7 +3629,7 @@
         <field name="ShortQty" required="N"/>
         <field name="PosQtyStatus" required="N"/>
         <!--  IG Customisation -->
-        <field name="PositionId" required="N"/>
+        <field name="PositionIdDeprecated" required="N"/>
         <field name="OriginatingClientOrderRef" required="N"/>
         <field name="OriginatingOrderIDRef" required="N"/>
         <field name="ClosingOrderIDRef" required="N"/>
@@ -10121,9 +10127,12 @@
     </field>
     <!-- New field https://fiximate.fixtrading.org/en/FIX.5.0SP2_EP257/tag2130.html -->
     <field number="2130" name="ComplexEventStrikePrice" type="PRICE"/>
-
-    <!-- New Field for Position ID : See http://www.fixprotocol.org/specifications/fields -->
-    <field number="7324" name="PositionId" type="STRING"/>
+    <!-- New Field for Position ID taken from obsolete http://www.fixprotocol.org/specifications/fields
+         This is deprecated (and not used) in OTC API 2 
+         now renamed from PositionId to PositionIdDeprecated -->
+    <field number="7324" name="PositionIdDeprecated" type="STRING"/>
+    <!-- New FIX Standard Field for Position ID EP 199 added to dictionary by IG-->
+    <field number="2618" name="PositionID" type="STRING"/>
 
     <!-- New Fields for Originating (Client/IG) Order Refs, Closing Order ID and Open Price in Position Report - IG customisation -->
     <field number="20101" name="OriginatingClientOrderRef" type="STRING"/>
