@@ -862,9 +862,9 @@
     <message name="PositionMaintenanceRequest" msgtype="AL" msgcat="app">
       <!-- Required by IG -->
       <field name="PosReqID" required="Y"/>
-      <!-- PositionID in PositionMaintenanceRequest is an IG Customisation 
+      <!-- PositionID in PositionMaintenanceRequest is an IG Customisation
            it is optional in the dictionary but is required for OTC API V2
-           in versions before V2 a deprecated PositionId field is used 
+           in versions before V2 a deprecated PositionId field is used
            (in the PositionQty component) -->
       <field name="PositionID" required="N"/>
       <field name="PosTransType" required="Y"/>
@@ -995,7 +995,7 @@
       <component name="ApplicationSequenceControl" required="N"/>
       <field name="PosMaintRptID" required="Y"/>
       <!--  PositionID is FIX Standard EP199 - added to dictionary by IG  -->
-      <field name="PositionID" required="N"/>      
+      <field name="PositionID" required="N"/>
       <field name="PosReqID" required="N"/>
       <field name="PosReqType" required="N"/>
       <field name="SubscriptionRequestType" required="N"/>
@@ -2715,6 +2715,8 @@
       <component name="YieldData" required="N"/>
       <component name="MarketSegmentGrp" required="N"/>
       <field name="TransactTime" required="N"/>
+      <!-- adding this component here is an IG customization -->
+      <component name="CommissionData" required="N"/>
     </message>
     <message name="SecurityStatusRequest" msgtype="e" msgcat="app">
       <field name="SecurityStatusReqID" required="Y"/>
@@ -4566,6 +4568,8 @@
       <field name="Commission" required="N"/>
       <field name="CommType" required="N"/>
       <field name="CommCurrency" required="N"/>
+      <!-- from FIX.5.0SP2  EP169, FIX.5.0SP2  EP204, added by IG -->
+      <field name="CommRate" required="N"/>
       <field name="FundRenewWaiv" required="N"/>
     </component>
     <component name="YieldData">
@@ -5575,6 +5579,8 @@
       <value enum="4" description="PERCENTAGE_WAIVED_CASH_DISCOUNT"/>
       <value enum="5" description="PERCENTAGE_WAIVED_ENHANCED_UNITS"/>
       <value enum="6" description="POINTS_PER_BOND_OR_CONTRACT"/>
+      <!-- Added  FIX.5.0SP2  EP204 added by IG -->
+      <value enum="8" description="AMOUNT_PER_CONTRACT"/>
     </field>
     <field number="14" name="CumQty" type="QTY"/>
     <field number="15" name="Currency" type="CURRENCY"/>
@@ -7771,7 +7777,9 @@
       <value enum="3" description="NOT_AUTHORIZED_TO_RETRIEVE_INSTRUMENT_DATA"/>
       <value enum="4" description="INSTRUMENT_DATA_TEMPORARILY_UNAVAILABLE"/>
       <value enum="5" description="REQUEST_FOR_INSTRUMENT_DATA_NOT_SUPPORTED"/>
+      <!-- IG customization -->
       <value enum="100" description="REQUEST_QUOTA_EXCEEDED"/>
+      <!-- IG customization -->
       <value enum="101" description="NOT_AUTHORIZED_FOR_ACCOUNT"/>
     </field>
     <field number="561" name="RoundLot" type="QTY"/>
@@ -9626,6 +9634,8 @@
     <field number="1230" name="SecondaryHighLimitPrice" type="PRICE"/>
     <field number="1231" name="MinLotSize" type="QTY"/>
     <field number="1232" name="NoExecInstRules" type="NUMINGROUP"/>
+    <!-- from FIX.5.0SP2  EP169, FIX.5.0SP2  EP204, added by IG -->
+    <field number="1233" name="CommRate" type="FLOAT"/>
     <field number="1234" name="NoLotTypeRules" type="NUMINGROUP"/>
     <field number="1235" name="NoMatchRules" type="NUMINGROUP"/>
     <field number="1236" name="NoMaturityRules" type="NUMINGROUP"/>
@@ -10133,7 +10143,7 @@
     <!-- New field https://fiximate.fixtrading.org/en/FIX.5.0SP2_EP257/tag2130.html -->
     <field number="2130" name="ComplexEventStrikePrice" type="PRICE"/>
     <!-- New Field for Position ID taken from obsolete http://www.fixprotocol.org/specifications/fields
-         This is deprecated (and not used) in OTC API 2 
+         This is deprecated (and not used) in OTC API 2
          now renamed from PositionId to PositionIdDeprecated -->
     <field number="7324" name="PositionIdDeprecated" type="STRING"/>
     <!-- New FIX Standard Field for Position ID EP 199 added to dictionary by IG-->
