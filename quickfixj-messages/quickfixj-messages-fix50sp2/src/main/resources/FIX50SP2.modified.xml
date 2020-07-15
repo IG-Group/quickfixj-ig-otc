@@ -862,8 +862,11 @@
     <message name="PositionMaintenanceRequest" msgtype="AL" msgcat="app">
       <!-- Required by IG -->
       <field name="PosReqID" required="Y"/>
-      <!-- PositionID in PositionMaintenanceRequest is an IG Customisation -->
-      <field name="PositionID" required="Y"/>
+      <!-- PositionID in PositionMaintenanceRequest is an IG Customisation 
+           it is optional in the dictionary but is required for OTC API V2
+           in versions before V2 a deprecated PositionId field is used 
+           (in the PositionQty component) -->
+      <field name="PositionID" required="N"/>
       <field name="PosTransType" required="Y"/>
       <field name="PosMaintAction" required="Y"/>
       <field name="OrigPosReqRefID" required="N"/>
