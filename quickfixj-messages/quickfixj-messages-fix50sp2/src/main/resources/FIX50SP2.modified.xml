@@ -6331,6 +6331,8 @@
       <value enum="TLQN" description="TERM_LIQUIDITY_NOTE"/>
       <value enum="XCN" description="EXTENDED_COMM_NOTE"/>
       <value enum="YCD" description="YANKEE_CERTIFICATE_OF_DEPOSIT"/>
+      <value enum="SPREADBET" description="SPREADBET"/>
+      <value enum="CFD" description="CFD"/>
     </field>
     <field number="168" name="EffectiveTime" type="UTCTIMESTAMP"/>
     <field number="169" name="StandInstDbType" type="INT">
