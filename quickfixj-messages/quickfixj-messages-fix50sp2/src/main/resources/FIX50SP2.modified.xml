@@ -7104,6 +7104,7 @@
       <value enum="10" description="WAREHOUSE_RECAP"/>
       <value enum="11" description="PEG_REFRESH"/>
       <value enum="99" description="OTHER"/>
+      <value enum="100" description="DMA_EXECUTION"/>
     </field>
     <field number="379" name="BusinessRejectRefID" type="STRING"/>
     <field number="380" name="BusinessRejectReason" type="INT">
