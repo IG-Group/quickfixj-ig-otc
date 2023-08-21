@@ -5550,6 +5550,19 @@
 	     <field name="OrderAttributeValue" required="Y"/>
 	  </group>
 	</component>
+    <!-- IG custom components added for RDW -->
+    <component name="RepeatDealingWindow">
+      <group name="NoRepeatDealingWindow" required="Y">
+        <field name="Side" required="Y"/>
+        <component name="RepeatDealingEntry" required="Y"/>
+      </group>
+    </component>
+    <component name="RepeatDealingEntry">
+      <group name="NoRepeatDealingEntry" required="Y">
+        <field name="RepeatDealingSize" required="Y"/>
+        <field name="RepeatDealingExpiry" required="Y"/>
+      </group>
+    </component>
   </components>
   <fields>
     <field number="1" name="Account" type="STRING"/>
@@ -10230,5 +10243,10 @@
       <value enum="2" description="SECURITY_NOT_SHORTABLE_AT_OR_BELOW_BEST_BID"/>
       <value enum="3" description="SECURITY_NOT_SHORTABLE_WITHOUT_PREBORROW"/>
     </field>
+    <!-- IG custom fields added for RDW -->
+    <field number="5021" name="NoRepeatDealingWindow" type="NUMINGROUP"/>
+    <field number="5022" name="NoRepeatDealingEntry" type="NUMINGROUP"/>
+    <field number="5023" name="RepeatDealingSize" type="AMT"/>
+    <field number="5024" name="RepeatDealingExpiry" type="UTCTIMESTAMP"/>
   </fields>
 </fix>
