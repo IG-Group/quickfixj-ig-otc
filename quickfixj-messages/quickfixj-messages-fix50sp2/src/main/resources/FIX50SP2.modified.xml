@@ -263,6 +263,7 @@
       <field name="ContingencyType" required="N"/>
 
       <component name="OrderAttributeGrp" required="N"/>
+      <component name="RepeatDealingWindow" required="N"/>
     </message>
     <message name="OrderCancelReject" msgtype="9" msgcat="app">
       <field name="OrderID" required="Y"/>
